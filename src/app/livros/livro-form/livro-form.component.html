@@ -1,0 +1,48 @@
+<div class="back">
+  <h1 class="text-center" style="background-color: #abebbe; color:#2e9457">Cadastro de Livros</h1>
+  <div class="container" style="width:600px">
+    <form [formGroup]="livroForm" (submit)="save()">
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input type="text" class="form-control" id="titulo" formControlName="titulo">
+        <div 
+          *ngIf="livroForm.get('titulo').errors?.required && (livroForm.get('titulo').dirty || livroForm.get('titulo').touched)" 
+          class="alert alert-danger">
+            <strong>Título obrigatório!</strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="autor">Autor:</label>
+        <input type="text" class="form-control" id="autor" formControlName="autor">
+        <div 
+          *ngIf="livroForm.get('autor').errors?.required && (livroForm.get('autor').dirty || livroForm.get('autor').touched)" 
+          class="alert alert-danger">
+            <strong>Autor obrigatório!</strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" class="form-control" id="descricao" formControlName="descricao">
+        <div 
+          *ngIf="livroForm.get('descricao').errors?.required && (livroForm.get('descricao').dirty || livroForm.get('descricao').touched)" 
+          class="alert alert-danger">
+            <strong>Descrição obrigatória!</strong>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="capa">Capa:</label>
+        <input type="text" class="form-control" id="capa" formControlName="capa">
+      </div>
+      <div class="form-group">
+        <label for="valor">Valor:</label>
+        <input type="text" class="form-control" id="valor" formControlName="valor">
+        <div 
+          *ngIf="livroForm.get('valor').errors?.required && (livroForm.get('valor').dirty || livroForm.get('valor').touched)" 
+          class="alert alert-danger">
+            <strong>Valor obrigatório!</strong>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!livroForm.valid" class="btn btn-primary" style="color:white; background-color: #2e9457; border-color: #2e9457">Salvar</button>
+    </form>
+  </div>
+</div>

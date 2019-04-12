@@ -1,0 +1,8 @@
+<div class="back">
+  <h1 class="text-center" style="background-color: #abebbe; color:#2e9457">Lista de Livros</h1>
+  <div class="row">
+    <div class="col" *ngFor="let liv of livros">
+      <app-livro [livro]="liv"></app-livro>
+    </div>
+  </div>
+</div>

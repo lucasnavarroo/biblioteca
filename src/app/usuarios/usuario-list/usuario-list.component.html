@@ -1,0 +1,8 @@
+<div class="back">
+  <h1 class="text-center" style="background-color: #abebbe; color:#2e9457">Lista de Usuarios</h1>
+  <div class="row">
+    <div class="col" *ngFor="let usuario of usuarios">
+      <app-usuario [usuario]="usuario"></app-usuario>
+    </div>
+  </div>
+</div>
